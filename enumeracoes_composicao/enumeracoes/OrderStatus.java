@@ -1,4 +1,4 @@
-package enumeracoes_com_posicao.enumeracoes;
+package enumeracoes_composicao.enumeracoes;
 
 public enum OrderStatus {
 
@@ -6,5 +6,5 @@ public enum OrderStatus {
 	PROCESSING,
 	SHIPPED,
 	DELIVERED;
-    
+
 }

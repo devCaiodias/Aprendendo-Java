@@ -1,4 +1,4 @@
-package enumeracoes_com_posicao.enumeracoes;
+package enumeracoes_composicao.enumeracoes;
 
 import java.util.Date;
 

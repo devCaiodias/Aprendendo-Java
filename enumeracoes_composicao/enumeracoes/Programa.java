@@ -1,4 +1,4 @@
-package enumeracoes_com_posicao.enumeracoes;
+package enumeracoes_composicao.enumeracoes;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ public class Programa {
 
         OrderStatus os1 = OrderStatus.DELIVERED;
         OrderStatus os2 = OrderStatus.valueOf("DELIVERED");
-        
+
         System.out.println(os1);
         System.out.println(os2);
     }
