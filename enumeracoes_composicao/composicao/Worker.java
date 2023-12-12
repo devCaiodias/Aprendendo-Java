@@ -62,7 +62,7 @@ public class Worker {
     public void addContracts(HourContract contract){
         contracts.add(contract);
     }
--
+    
     public void removeContracts(HourContract contract){
         contracts.remove(contract);
     }
