@@ -31,5 +31,7 @@ public class Teste {
         System.out.print("Enter a withdraw value: ");
         conta.sacarDeposito(sc.nextDouble());
         System.out.println(conta.ToString());
+
+        sc.close();
     }
 }

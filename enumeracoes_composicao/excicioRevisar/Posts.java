@@ -75,7 +75,7 @@ public class Posts {
 
         sb.append(titulo + "\n");
         sb.append(likes);
-        sb.append("Likes - ");
+        sb.append(" Likes - ");
         sb.append(sdf.format(momento) + "\n");
         sb.append(contente + "\n");
         sb.append("Comente: \n");
