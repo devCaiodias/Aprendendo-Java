@@ -34,7 +34,7 @@ public class Account {
     }
 
    public void retirar(Double quantidade){
-        balance -= quantidade;
+        balance -= quantidade + 5.0;
    }
 
    public void depositar(Double quantidade){
