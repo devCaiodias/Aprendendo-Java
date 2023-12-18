@@ -36,5 +36,7 @@ public class Programa {
         System.out.println();
         System.out.println("PAYMENTS:");
         System.out.println(list.toString());
+
+        sc.close();
     }
 }
