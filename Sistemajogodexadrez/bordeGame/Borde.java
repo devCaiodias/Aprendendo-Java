@@ -36,4 +36,9 @@ public class Borde {
     public Piece pieces(Position position){
         return pieces[position.getLinha()][position.getColuna()];
     }
+
+    public void placePieces(Piece piece,Position position){
+        this.pieces[position.getLinha()][position.getColuna()] = piece;
+        piece.position = position;
+    }
 }
