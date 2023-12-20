@@ -28,4 +28,12 @@ public class Borde {
     public void setColunas(int colunas){
         this.colunasB = colunas;
     }
+
+    public Piece pieces(int linha,int coluna){
+        return pieces[linha][coluna];
+    }
+
+    public Piece pieces(Position position){
+        return pieces[position.getLinha()][position.getColuna()];
+    }
 }

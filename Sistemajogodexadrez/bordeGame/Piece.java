@@ -3,8 +3,6 @@ package Sistemajogodexadrez.bordeGame;
 public class Piece {
     protected Position position;
     private Borde borde;
-    
-    public Piece(){}
 
     public Piece(Borde borde){
         this.borde = borde;
