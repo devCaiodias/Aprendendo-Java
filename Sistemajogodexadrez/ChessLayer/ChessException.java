@@ -1,6 +1,8 @@
 package Sistemajogodexadrez.ChessLayer;
 
-public class ChessException extends RuntimeException {
+import Sistemajogodexadrez.bordeGame.BordeException;
+
+public class ChessException extends BordeException {
      private static final long serialVersionUID = 1L;
 
     public ChessException(String msg){

@@ -54,6 +54,19 @@ public class Borde {
         piece.position = position;
     }
 
+    public Piece removePiece(Position position){ 
+        if (!positionExists(position)) {
+            throw new BordeException("Position not on the Borde");
+        }
+        if (pieces(position)== null) {
+            return null;
+        }
+        Piece aux = pieces(position);
+        aux.position = null;
+        pieces[position.getLinha()][position.getColuna()] = null;
+        return aux;
+    }
+
     private boolean positionExists(int linhas, int colunas ){
       return linhas >= 0 && linhas < this.linhasB && colunas >= 0 && colunas < this.colunasB;
     }

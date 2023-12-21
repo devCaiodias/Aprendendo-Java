@@ -3,6 +3,8 @@ package Sistemajogodexadrez.ChessLayer;
 import Sistemajogodexadrez.ChessLayer.chessPiece.King;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Rook;
 import Sistemajogodexadrez.bordeGame.Borde;
+import Sistemajogodexadrez.bordeGame.Piece;
+import Sistemajogodexadrez.bordeGame.Position;
 
 public class ChessMatch {
     private Borde borde;
@@ -21,6 +23,27 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
+        Position source = sourcePosition.toPosition();
+        Position target = targetPosition.toPosition();
+        validateSourcePosition(source);
+        Piece capturedPiece = makeMove(source, target);
+        return (ChessPiece)capturedPiece;
+    }
+
+    private Piece makeMove(Position source, Position target){
+        Piece p = borde.removePiece(source);
+        Piece capturePiece = borde.removePiece(target);
+        borde.placePieces(p, target);
+        return capturePiece;
+    }
+
+    private void validateSourcePosition(Position position){
+        if (!borde.ThereIsAPiece(position)) {
+            throw new ChessException("N existir peça na posição de origem");
+        }
     }
 
     private void placeNewPice(char coluna, int linha, ChessPiece piece){
