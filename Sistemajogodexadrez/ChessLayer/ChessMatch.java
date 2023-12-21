@@ -3,7 +3,6 @@ package Sistemajogodexadrez.ChessLayer;
 import Sistemajogodexadrez.ChessLayer.chessPiece.King;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Rook;
 import Sistemajogodexadrez.bordeGame.Borde;
-import Sistemajogodexadrez.bordeGame.Position;
 
 public class ChessMatch {
     private Borde borde;
@@ -24,10 +23,13 @@ public class ChessMatch {
         return mat;
     }
 
+    private void placeNewPice(char coluna, int linha, ChessPiece piece){
+        borde.placePieces(piece, new ChessPosition(coluna, linha).toPosition());
+    }
+
     public void initialSetup(){
-        borde.placePieces(new Rook(borde, Color.WHITE), new Position(2, 1));
-        borde.placePieces(new King(borde, Color.BLACK), new Position(0, 3));    
-        borde.placePieces(new King(borde, Color.WHITE), new Position(7, 7));    
+        placeNewPice('b', 6 , new Rook(borde, Color.WHITE));
+        placeNewPice('c', 6, new King(borde, Color.BLACK));   
     }
 
 }
