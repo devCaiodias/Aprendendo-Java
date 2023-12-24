@@ -3,7 +3,7 @@ package Sistemajogodexadrez.ChessLayer;
 import Sistemajogodexadrez.bordeGame.Borde;
 import Sistemajogodexadrez.bordeGame.Piece;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
     
     private Color color;
     
