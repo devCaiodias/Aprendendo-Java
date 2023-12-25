@@ -2,6 +2,7 @@ package Sistemajogodexadrez.ChessLayer;
 
 import Sistemajogodexadrez.bordeGame.Borde;
 import Sistemajogodexadrez.bordeGame.Piece;
+import Sistemajogodexadrez.bordeGame.Position;
 
 public abstract class ChessPiece extends Piece {
     
@@ -14,6 +15,11 @@ public abstract class ChessPiece extends Piece {
 
     public Color getColor(){
         return color;
+    }
+
+    protected boolean IsThereOpponentPiece(Position position){
+        ChessPiece p = (ChessPiece)getBorde().pieces(position);
+        return p != null && p.getColor() != color;
     }
     
 }

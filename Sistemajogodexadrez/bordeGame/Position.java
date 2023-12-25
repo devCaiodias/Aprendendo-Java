@@ -19,6 +19,14 @@ public class Position {
         return colunaP;
     }
 
+    public void setLinhaP(int linha){
+        this.linhaP = linha;
+    }
+    
+    public void setColunaP(int coluna){
+        this.colunaP = coluna;
+    }
+
     public void setValues(int linha , int coluna){
         this.linhaP = linha;
         this.colunaP = coluna;
