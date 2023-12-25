@@ -7,12 +7,26 @@ import Sistemajogodexadrez.bordeGame.Piece;
 import Sistemajogodexadrez.bordeGame.Position;
 
 public class ChessMatch {
+
+    private int turn;
+    private Color currentPlayer;
     private Borde borde;
 
     public ChessMatch(){
         borde = new Borde(8, 8);
+        turn = 1;
+        currentPlayer = Color.WHITE;
         initialSetup();
 
+
+    }
+
+    public int getTurn(){
+        return turn;
+    }
+
+    public Color getcurrentPlayer(){
+        return currentPlayer;
     }
 
     public ChessPiece[][] getPieces(){
@@ -37,6 +51,7 @@ public class ChessMatch {
         validateSourcePosition(source);
         validateTargetPosition(source, target);
         Piece capturedPiece = makeMove(source, target);
+        nextTurn();
         return (ChessPiece)capturedPiece;
     }
 
@@ -51,6 +66,9 @@ public class ChessMatch {
         if (!borde.ThereIsAPiece(position)) {
             throw new ChessException("N existir peça na posição de origem");
         }
+        if (currentPlayer != ((ChessPiece)borde.pieces(position)).getColor()) {
+            throw new ChessException("the chosen piece is not yours");
+        }
         if (!borde.pieces(position).IsThereAnyPossibleMove()) {
             throw new ChessException("There is no possible moves for the chosen piece");
         }
@@ -60,6 +78,11 @@ public class ChessMatch {
         if (!borde.pieces(source).PossibleMove(target)) {
             throw new ChessException("The chosen piece can't move to target position");
         }
+    }
+
+    private void nextTurn(){
+        turn++;
+        currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
     }
 
     private void placeNewPice(char coluna, int linha, ChessPiece piece){

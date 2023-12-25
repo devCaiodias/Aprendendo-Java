@@ -3,6 +3,7 @@ package Sistemajogodexadrez.application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Sistemajogodexadrez.ChessLayer.ChessMatch;
 import Sistemajogodexadrez.ChessLayer.ChessPiece;
 import Sistemajogodexadrez.ChessLayer.ChessPosition;
 import Sistemajogodexadrez.ChessLayer.Color;
@@ -46,6 +47,14 @@ public class UI {
         } catch (RuntimeException e) {
             throw new InputMismatchException("Valores valido de a1 ate h8");
         }
+    }
+
+    public static void printMatch(ChessMatch chessMatch){
+        printBoard(chessMatch.getPieces());
+        System.out.println();
+        System.out.println("Turn: " + chessMatch.getTurn());
+        System.out.println("waiting player: " + chessMatch.getcurrentPlayer());
+
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
