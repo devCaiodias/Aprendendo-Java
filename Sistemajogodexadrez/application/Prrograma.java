@@ -19,7 +19,7 @@ public class Prrograma {
 
 
         while (true) {
-            try {
+          try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, captured);
                 System.out.println();
@@ -38,7 +38,7 @@ public class Prrograma {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
-                
+              
             }
             catch (ChessException e) {
                 System.out.println(e.getMessage());
@@ -48,7 +48,6 @@ public class Prrograma {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
-
         }
     }
 }
