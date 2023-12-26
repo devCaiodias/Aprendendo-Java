@@ -1,5 +1,8 @@
 package Sistemajogodexadrez.ChessLayer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Sistemajogodexadrez.ChessLayer.chessPiece.King;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Rook;
 import Sistemajogodexadrez.bordeGame.Borde;
@@ -11,6 +14,11 @@ public class ChessMatch {
     private int turn;
     private Color currentPlayer;
     private Borde borde;
+
+    private List<Piece> piecesOnTheBoard = new ArrayList<>();
+    private List<Piece> capturedPieces = new ArrayList<>();
+
+
 
     public ChessMatch(){
         borde = new Borde(8, 8);
@@ -59,6 +67,12 @@ public class ChessMatch {
         Piece p = borde.removePiece(source);
         Piece capturePiece = borde.removePiece(target);
         borde.placePieces(p, target);
+
+        if (capturePiece != null) {
+            piecesOnTheBoard.remove(capturePiece);
+            capturedPieces.add(capturePiece);
+        }
+
         return capturePiece;
     }
 
@@ -87,6 +101,7 @@ public class ChessMatch {
 
     private void placeNewPice(char coluna, int linha, ChessPiece piece){
         borde.placePieces(piece, new ChessPosition(coluna, linha).toPosition());
+        piecesOnTheBoard.add(piece);
     }
 
     public void initialSetup(){
