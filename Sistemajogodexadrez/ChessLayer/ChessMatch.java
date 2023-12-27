@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import Sistemajogodexadrez.ChessLayer.chessPiece.Bishop;
 import Sistemajogodexadrez.ChessLayer.chessPiece.King;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Pawn;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Rook;
@@ -197,7 +198,9 @@ public class ChessMatch {
 
     public void initialSetup(){
         placeNewPice('a', 1, new Rook(borde, Color.WHITE));
+        placeNewPice('c', 1, new Bishop(borde, Color.WHITE));
         placeNewPice('e', 1, new King(borde, Color.WHITE));
+        placeNewPice('f', 1, new Bishop(borde, Color.WHITE));
         placeNewPice('h', 1, new Rook(borde, Color.WHITE));
         placeNewPice('a', 2, new Pawn(borde, Color.WHITE));
         placeNewPice('b', 2, new Pawn(borde, Color.WHITE));
@@ -207,9 +210,11 @@ public class ChessMatch {
         placeNewPice('f', 2, new Pawn(borde, Color.WHITE));
         placeNewPice('g', 2, new Pawn(borde, Color.WHITE));
         placeNewPice('h', 2, new Pawn(borde, Color.WHITE));
-
+        
         placeNewPice('a', 8, new Rook(borde, Color.BLACK));
+        placeNewPice('c', 8, new Bishop(borde, Color.BLACK));
         placeNewPice('e', 8, new King(borde, Color.BLACK));
+        placeNewPice('f', 8, new Bishop(borde, Color.BLACK));
         placeNewPice('h', 8, new Rook(borde, Color.BLACK));
         placeNewPice('a', 7, new Pawn(borde, Color.BLACK));
         placeNewPice('b', 7, new Pawn(borde, Color.BLACK));
