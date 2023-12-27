@@ -8,6 +8,7 @@ import Sistemajogodexadrez.ChessLayer.chessPiece.Bishop;
 import Sistemajogodexadrez.ChessLayer.chessPiece.King;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Knight;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Pawn;
+import Sistemajogodexadrez.ChessLayer.chessPiece.Queen;
 import Sistemajogodexadrez.ChessLayer.chessPiece.Rook;
 import Sistemajogodexadrez.bordeGame.Borde;
 import Sistemajogodexadrez.bordeGame.Piece;
@@ -201,6 +202,7 @@ public class ChessMatch {
         placeNewPice('a', 1, new Rook(borde, Color.WHITE));
         placeNewPice('b', 1, new Knight(borde, Color.WHITE));
         placeNewPice('c', 1, new Bishop(borde, Color.WHITE));
+        placeNewPice('d', 1, new Queen(borde, Color.WHITE));
         placeNewPice('e', 1, new King(borde, Color.WHITE));
         placeNewPice('f', 1, new Bishop(borde, Color.WHITE));
         placeNewPice('g', 1, new Knight(borde, Color.WHITE));
@@ -217,6 +219,7 @@ public class ChessMatch {
         placeNewPice('a', 8, new Rook(borde, Color.BLACK));
         placeNewPice('b', 8, new Knight(borde, Color.BLACK));
         placeNewPice('c', 8, new Bishop(borde, Color.BLACK));
+        placeNewPice('d', 8, new Queen(borde, Color.BLACK));
         placeNewPice('e', 8, new King(borde, Color.BLACK));
         placeNewPice('f', 8, new Bishop(borde, Color.BLACK));
         placeNewPice('g', 8, new Knight(borde, Color.BLACK));
