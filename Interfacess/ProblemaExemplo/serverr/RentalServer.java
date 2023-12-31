@@ -9,13 +9,13 @@ public class RentalServer {
     private Double pricePerH;
     private Double pricePerD;
 
-    private BrazilTaxServer taxServer;
+    private TaxServer taxServer;
 
     public RentalServer(){
 
     }
     
-    public RentalServer(BrazilTaxServer taxServer,Double priceH, Double priceD){
+    public RentalServer(TaxServer taxServer,Double priceH, Double priceD){
         this.taxServer = taxServer;
         this.pricePerD = priceD;
         this.pricePerH = priceH;

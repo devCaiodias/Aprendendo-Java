@@ -1,8 +1,8 @@
 package Interfacess.ProblemaExemplo.serverr;
 
-public class BrazilTaxServer {
+public class BrazilTaxServer implements TaxServer {
     
-    public Double tax(Double amount){
+    public double tax(double amount){
         if (amount <= 100.0)  {
             return amount * 0.2;
         }
@@ -10,4 +10,5 @@ public class BrazilTaxServer {
             return amount * 0.15;
         }
     }
+
 }
