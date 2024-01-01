@@ -11,32 +11,29 @@ public class RentalServer {
 
     private TaxServer taxServer;
 
-    public RentalServer(){
+    public RentalServer() {
 
     }
-    
-    public RentalServer(TaxServer taxServer,Double priceH, Double priceD){
+
+    public RentalServer(TaxServer taxServer, Double priceH, Double priceD) {
         this.taxServer = taxServer;
         this.pricePerD = priceD;
         this.pricePerH = priceH;
     }
-    
 
-        public void processinvoice(Locadora locadora){
+    public void processinvoice(Locadora locadora) {
 
-        double minutos =Duration.between(locadora.getRetirada(), locadora.getRetorno()).toMinutes();
+        double minutos = Duration.between(locadora.getRetirada(), locadora.getRetorno()).toMinutes();
         double horas = minutos / 60.0;
-        
         double basicPayment;
         if (horas <= 12.0) {
             basicPayment = pricePerH * Math.ceil(horas);
-        }
-        else{
+        } else {
             basicPayment = pricePerD * Math.ceil(horas / 24.0);
         }
 
         double tax = taxServer.tax(basicPayment);
 
-            locadora.setInvoice(new Invoice(basicPayment, tax));
-        }
+        locadora.setInvoice(new Invoice(basicPayment, tax));
+    }
 }
