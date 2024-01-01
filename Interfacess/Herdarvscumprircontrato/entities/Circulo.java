@@ -2,7 +2,7 @@ package Interfacess.Herdarvscumprircontrato.entities;
 
 import Interfacess.Herdarvscumprircontrato.emun.Color;
 
-public class Circulo extends Shape {
+public class Circulo extends AbstratcShape implements Shape {
 
     private double radius;
 

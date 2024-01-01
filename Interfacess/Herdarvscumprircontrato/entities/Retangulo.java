@@ -2,7 +2,7 @@ package Interfacess.Herdarvscumprircontrato.entities;
 
 import Interfacess.Herdarvscumprircontrato.emun.Color;
 
-public class Retangulo extends Shape {
+public class Retangulo extends AbstratcShape implements Shape {
 
     private Double width;
     private Double height;
